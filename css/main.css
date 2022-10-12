@@ -1,0 +1,54 @@
+body {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow-x: hidden;
+    padding: 0;
+}
+
+
+table {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+th{
+    text-transform: capitalize;
+    background-color: lightgrey;
+}
+
+th, td {
+    text-align: center;
+    padding: 10px;
+}
+
+td {
+    background-color: rgb(206, 246, 246);
+}
+
+
+.modal {
+    background-color: rgb(194, 231, 229);
+    padding: 10px;
+    position: absolute;
+    top: 110px;
+    left: 150%;
+    height: 60vh;
+    min-width: 300px;
+    transition: left .5s, right .5s; 
+}
+.modal.open {
+    left: 50%;
+}
+.modal h3{
+    text-align: center;
+    color:rgb(225, 22, 56);
+    text-transform: capitalize;
+}
+.modal h4 span{
+    color:black;
+}
+.modal > * {
+    text-align: left;
+    margin: 20px;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Book Shop</title>
+
+</head>
+
+<body onload="onInit()">
+
+    <h1>My Book Shop</h1>
+
+    <section class="book-filter">
+        <h3>Filter:</h3>
+
+        <label>
+            Max Price:
+            <output id="price">300</output>
+            <input type="range" min="0" max="300" value="300" class="filter-price-range"
+            onchange="this.title=this.value;onSetFilterBy({maxPrice: this.value})" 
+            oninput="price.value = this.value"/>
+        </label>
+        <label>
+            Min Rating:
+            <output id="rate">0</output>
+            <input type="range" min="0" max="10" value="0" class="filter-rating-range"
+                onchange="this.title=this.value;onSetFilterBy({minRating: this.value})" 
+                oninput="rate.value = this.value"/>
+        </label>
+
+    </section>
+    <hr>
+
+
+    <button title="Add Book" onclick="onAddBook()">Add Book</button>
+
+    <section class="books-display">
+
+        <table class="books-table">
+            <thead></thead>
+            <tbody>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="page-nav">
+        <button class="prev-page" onclick="onPrevPage()">Prev Page</button>
+        pg:<span></span>
+        <button class="next-page" onclick="onNextPage()">Next Page</button>
+    </section>
+
+
+    <div class="modal">
+        <h3></h3>
+        <h4>Price: &dollar;<span></span></h4>
+        <h5>Book Description:</h5>
+        <p></p>
+        <section class="rate">
+        </section>
+        <button onclick="onCloseModal()">Close</button>
+    </div>
+
+    <script src="js/services/util.service.js"></script>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/books.service.js"></script>
+    <script src="js/book.controller.js"></script>
+</body>
+
+</html>
